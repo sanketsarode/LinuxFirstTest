@@ -24,12 +24,22 @@ public class AppTest {
         WebElement ele = driver.findElement(By.xpath("//h2[contains(text(),'All')]"));
         System.out.println(ele.getText());
         Assert.assertTrue(title.contains("Demo Guru99 Page"));
+
+        try {
+            ele = driver.findElement(By.id("philadelphia-field-email"));
+            ele.sendKeys("asdfasdfadsfadsf");
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
     }
 
     @Before
     public void beforeTest() {
         System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "//resources//drivers//chromedriver");
-        driver = new ChromeDriver();
+        //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//resources//drivers//chromedriver.exe");
+        driver = new HtmlUnitDriver(true);
+        ((HtmlUnitDriver) driver).setJavascriptEnabled(true);
+        //driver = new ChromeDriver();
     }
 
     @After
