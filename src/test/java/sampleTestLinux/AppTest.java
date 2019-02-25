@@ -10,11 +10,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Unit test for simple App.
  */
 public class AppTest {
     private WebDriver driver;
+    private static Logger log = Logger.getLogger("com.gargoylesoftware");
 
     @Test
     public void testEasy() {
@@ -40,7 +44,8 @@ public class AppTest {
 
     @Before
     public void beforeTest() {
-        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "//resources//drivers//chromedriver");
+        log.setLevel(Level.OFF);
+        //System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "//resources//drivers//chromedriver");
         //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//resources//drivers//chromedriver.exe");
         driver = new HtmlUnitDriver(true);
         ((HtmlUnitDriver) driver).setJavascriptEnabled(true);
