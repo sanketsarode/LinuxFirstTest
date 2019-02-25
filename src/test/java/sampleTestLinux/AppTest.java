@@ -28,8 +28,8 @@ public class AppTest {
 
     @Before
     public void beforeTest() {
-        //System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "//resources//drivers//chromedriver");
-        driver = new HtmlUnitDriver();
+        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "//resources//drivers//chromedriver");
+        driver = new ChromeDriver();
     }
 
     @After
