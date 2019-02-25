@@ -27,7 +27,12 @@ public class AppTest {
 
         try {
             ele = driver.findElement(By.id("philadelphia-field-email"));
-            ele.sendKeys("asdfasdfadsfadsf");
+            ele.sendKeys("test@test.com");
+            ele = driver.findElement(By.id("philadelphia-field-submit"));
+            ele.click();
+
+            System.out.println("Message says: " + driver.switchTo().alert().getText());
+            driver.switchTo().alert().accept();
         } catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());
         }
