@@ -55,8 +55,8 @@ public class AppTest {
         //File file = new File("D:/Softwares/Drivers/Phantomjs/phantomjs.exe");
         //System.setProperty("phantomjs.binary.path", file.getAbsolutePath());
 
-        //System.setProperty("phantomjs.binary.path", System.getProperty("user.dir") + "/resources//drivers//phantomjs.exe");
-        System.setProperty("phantomjs.binary.path", System.getProperty("user.dir") + "/resources//drivers//phantomjs");
+        //System.setProperty("phantomjs.binary.path", System.getProperty("user.dir") + "//resources//drivers//phantomjs.exe");
+        System.setProperty("phantomjs.binary.path", System.getProperty("user.dir") + "//resources//drivers//phantomjs");
         driver = new PhantomJSDriver();
     }
 
