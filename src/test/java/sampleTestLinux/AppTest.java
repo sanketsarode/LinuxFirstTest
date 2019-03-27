@@ -62,7 +62,7 @@ public class AppTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("--no-sandbox");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
     }
 
     @After
