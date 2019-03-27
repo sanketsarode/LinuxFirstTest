@@ -29,6 +29,7 @@ public class AppTest {
     @Before
     public void beforeTest() {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
+        //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//resources//drivers//chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("--no-sandbox");
