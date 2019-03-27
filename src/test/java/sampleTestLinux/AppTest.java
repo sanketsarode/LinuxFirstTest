@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
@@ -57,7 +58,11 @@ public class AppTest {
 
         //System.setProperty("phantomjs.binary.path", System.getProperty("user.dir") + "//resources//drivers//phantomjs.exe");
         System.setProperty("phantomjs.binary.path", "/usr/bin/google-chrome");
-        driver = new PhantomJSDriver();
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        driver = new ChromeDriver();
     }
 
     @After
