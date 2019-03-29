@@ -9,9 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  * Unit test for simple App.
  */
