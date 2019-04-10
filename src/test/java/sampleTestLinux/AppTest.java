@@ -34,13 +34,13 @@ public class AppTest {
         //options.addArguments("--no-sandbox");
         //driver = new ChromeDriver(options);
 
-        try {
+        /*try {
             Runtime.getRuntime().exec("sudo mv /var/lib/jenkins/workspace/linuxtest/resources/drivers/phantomjs /usr/bin/phantomjs");
             Runtime.getRuntime().exec("sudo chown root:root /usr/bin/phantomjs");
             Runtime.getRuntime().exec("sudo chmod +x /usr/bin/phantomjs");
         } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());
-        }
+        }*/
 
         System.setProperty("phantomjs.binary.path", "/usr/bin/phantomjs");
         driver = new PhantomJSDriver();
