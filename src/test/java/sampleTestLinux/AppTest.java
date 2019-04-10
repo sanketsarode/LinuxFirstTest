@@ -35,7 +35,7 @@ public class AppTest {
         //driver = new ChromeDriver(options);
 
         try {
-            Runtime.getRuntime().exec("mv /resources/drivers/phantomjs /usr/bin/phantomjs");
+            Runtime.getRuntime().exec("mv /var/lib/jenkins/workspace/linuxtest/resources/drivers/phantomjs /usr/bin/phantomjs");
             Runtime.getRuntime().exec("chown root:root /usr/bin/phantomjs");
             Runtime.getRuntime().exec("chmod +x /usr/bin/phantomjs");
         } catch (Exception e) {
