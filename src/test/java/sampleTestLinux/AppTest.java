@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 /**
  * Unit test for simple App.
@@ -25,12 +26,25 @@ public class AppTest {
 
     @Before
     public void beforeTest() {
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+
         //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//resources//drivers//chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        options.addArguments("--no-sandbox");
-        driver = new ChromeDriver(options);
+        //ChromeOptions options = new ChromeOptions();
+        //options.addArguments("--headless");
+        //options.addArguments("--no-sandbox");
+        //driver = new ChromeDriver(options);
+
+        try {
+            Runtime.getRuntime().exec("mv /resources/drivers/phantomjs /usr/bin/phantomjs");
+            Runtime.getRuntime().exec("chown root:root /usr/bin/phantomjs");
+            Runtime.getRuntime().exec("chmod +x /usr/bin/phantomjs");
+        } catch (Exception e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+
+        System.setProperty("phantomjs.binary.path", "/usr/bin/phantomjs");
+        driver = new PhantomJSDriver();
+        driver.get("http://www.google.com");
     }
 
     @After
